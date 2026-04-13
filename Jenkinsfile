@@ -49,6 +49,7 @@ pipeline {
                 script {
                    sh """
                    docker build -t catalogue:${appVersion} .
+                   docker images
                    """
             }
         }
