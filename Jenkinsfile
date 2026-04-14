@@ -34,14 +34,14 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script{
-                    sh """
-                      echo "USER=$(whoami)"
-                      echo "PATH=$PATH"
-                      ls -l /usr/bin/npm || true
-                      ls -l /usr/bin/node || true
-                      /usr/bin/node -v || true
-                      /usr/bin/npm -v || true
-                    """
+                    sh '''
+echo "USER=$(whoami)"
+echo "PATH=$PATH"
+ls -l /usr/bin/npm || true
+ls -l /usr/bin/node || true
+/usr/bin/node -v || true
+/usr/bin/npm -v || true
+'''
                 }
             }
     }
