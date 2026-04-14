@@ -35,6 +35,8 @@ pipeline {
             steps {
                 script{
                     sh """
+                      /usr/bin/node -v
+                      /usr/bin/npm -v
                       /usr/bin/npm install
                     """
                 }
