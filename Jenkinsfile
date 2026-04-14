@@ -33,15 +33,15 @@ pipeline {
             }
         }
 
-        // stage('Install Dependencies') {
-        //     steps {
-        //         script{
-        //             sh """
-        //               /usr/bin/npm install
-        //             """
-        //         }
-        //     }
-        
+        stage('Install Dependencies') {
+            steps {
+                script{
+                    sh """
+                      npm install
+                    """
+                }
+            }
+    }
 
         stage('Build Image') {
             steps {
