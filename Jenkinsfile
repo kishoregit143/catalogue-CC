@@ -37,6 +37,9 @@ pipeline {
             steps {
                 script{
                     sh """
+                        export PATH=$PATH:/usr/bin:/usr/local/bin
+                        node -v
+                        npm -v
                         npm install
                     """
                 }
