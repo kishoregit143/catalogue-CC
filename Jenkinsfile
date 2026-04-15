@@ -76,7 +76,7 @@ pipeline {
             environment {
                 GITHUB_OWNER = 'kishoregit143'
                 GITHUB_REPO  = 'catalogue-CC'
-                GITHUB_API   = 'https://api.github.com/repos/kishoregit143/catalogue-CC/dependabot/alerts'
+                GITHUB_API   = 'https://api.github.com'
                 GITHUB_TOKEN = credentials('GITHUB_TOKEN')
             }
 
