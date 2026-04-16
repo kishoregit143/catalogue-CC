@@ -137,20 +137,21 @@ pipeline {
         }
         }
         stage('Trivy Scan'){
-            steps {
-                script{
-                    sh """
-                        trivy image \
-                        --scanners vuln \
-                        --severity HIGH,CRITICAL,MEDIUM \
-                        --pkg-types os \
-                        --exit-code 1 \
-                        --format table \
-                        ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com/${PROJECT}/${COMPONENT}:${appVersion}
-                    """
-                }
-            }
+          steps {
+           script{
+            sh """
+                trivy image \
+                --scanners vuln \
+                --severity HIGH,CRITICAL,MEDIUM \
+                --vuln-type os,library \
+                --exit-code 1 \
+                --no-progress \
+                --format table \
+                ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com/${PROJECT}/${COMPONENT}:${appVersion}
+            """
         }
+    }
+}
     }
 
     post {
