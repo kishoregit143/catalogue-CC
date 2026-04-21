@@ -2,7 +2,7 @@
 
 def configMap = [
     project: "roboshop",
-    component: "catalogue"
+    component: "catalogue-CC"
 ]
 
 echo "Going to execute Jenkins shared library"
